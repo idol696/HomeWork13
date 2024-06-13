@@ -36,7 +36,7 @@ public class App {
         if (authorTwo.equals(authorThree)) {
             System.out.println("Авторы похожи");
         } else {
-            System.out.println("Книги не похожи");
+            System.out.println("Авторы не похожи");
         }
     }
 }
