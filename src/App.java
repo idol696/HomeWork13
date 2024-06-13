@@ -5,7 +5,7 @@ public class App {
         Author authorOne = new Author("Николай", "Фёдоров");
         Author authorTwo = new Author("Виталий", "Валериянович");
         Author authorThree = new Author("Виталий", "Валериянович");
-        Book bookOne = new Book("Лапландия", 1970, authorOne);
+        Book bookOne = new Book("ЛаплаНдия", 1970, authorOne); // допустили ошибку в букве "Н" - заглавная
         Book bookTwo = new Book("Приключения юнного Питекантропика Геракла", 1908, authorTwo);
         Book bookThree = new Book("Лапландия", 1970, authorOne);
 

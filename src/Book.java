@@ -29,11 +29,29 @@ public class Book {
     }
 
     public boolean equals(Book book) {
-        return this.hashCode() == book.hashCode();
+        int degreeSimilarity = 0;
+        if (this.hashCode() == book.hashCode()) {
+            System.out.println("Книги равны по hashCode свойств объекта");
+            degreeSimilarity++;
+        }
+        if (this.author.toString().equalsIgnoreCase(book.author.toString())) {
+            System.out.println("Книги равны по автору");
+            degreeSimilarity++;
+        }
+        if (this.name.equalsIgnoreCase(book.name)) {
+            System.out.println("Книги равны по названию");
+            degreeSimilarity++;
+        }
+        if (this.year == book.year) {
+            System.out.println("Книги равны по году");
+            degreeSimilarity++;
+        }
+        System.out.printf("Уровени идентичности объекта: %s из 4-х%n",degreeSimilarity);
+        return degreeSimilarity == 4; // четверочка - это идентичные объекты
     }
 
     public int hashCode() {
-        return Objects.hashCode((name + year + author.toString()).toUpperCase());
+        return Objects.hashCode(this.name + this.year + this.author.toString());
     }
 
     private void bookExcept() {

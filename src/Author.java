@@ -17,11 +17,26 @@ public class Author {
     }
 
     public boolean equals(Author author) {
-        return this.hashCode() == author.hashCode();
+
+        int degreeSimilarity = 0;
+        if (this.hashCode() == author.hashCode()) {
+            System.out.println("hashCode объекта авторов идентичны");
+            degreeSimilarity++;
+        }
+        if (this.firstName.equalsIgnoreCase(author.firstName)) {
+            System.out.println("Имена авторов идентичны");
+            degreeSimilarity++;
+        }
+        if (this.lastName.equalsIgnoreCase(author.lastName)) {
+            System.out.println("Фамилии авторов идентичны");
+            degreeSimilarity++;
+        }
+        System.out.printf("Степень похожести объектов %s из 3-х%n",degreeSimilarity);
+        return degreeSimilarity == 3;
     }
 
     public int hashCode() {
-        return Objects.hashCode(this.toString().toUpperCase());
+        return Objects.hashCode(this.firstName + this.lastName);
     }
 
     public String getFirstName() {
