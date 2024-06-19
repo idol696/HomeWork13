@@ -29,6 +29,11 @@ public class Author {
                 Objects.equals(this.lastName, author.lastName);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.firstName, this.lastName);
+    }
+
     public String getFirstName() {
         return firstName;
     }
