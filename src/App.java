@@ -14,29 +14,16 @@ public class App {
         System.out.println(bookTwo.toString());
         System.out.println(bookThree.toString());
 
-        System.out.println("Похожа ли книга 1 на книгу 2?");
         if (bookOne.equals(bookTwo)) {
-            System.out.println("Книги похожи");
+            System.out.println("Книги одинаковы");
         } else {
-            System.out.println("Книги не похожи");
+            System.out.println("Книги разные");
         }
-        System.out.println("Похожа ли книга 1 на книгу 3?");
-        if (bookOne.equals(bookThree)) {
-            System.out.println("Книги похожи");
-        } else {
-            System.out.println("Книги не похожи");
-        }
-        System.out.println("Похож ли автор 1 на автора 2?");
-        if (authorOne.equals(authorTwo)) {
-            System.out.println("Авторы похожи");
-        } else {
-            System.out.println("Авторы не похожи");
-        }
-        System.out.println("Похож ли автор 2 на автора 3?");
+
         if (authorTwo.equals(authorThree)) {
-            System.out.println("Авторы похожи");
+            System.out.println("Авторы одинаковы");
         } else {
-            System.out.println("Авторы не похожи");
+            System.out.println("Авторы разные");
         }
     }
 }

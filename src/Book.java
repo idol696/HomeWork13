@@ -28,30 +28,23 @@ public class Book {
         return name + "," + year + "," + author.toString();
     }
 
-    public boolean equals(Book book) {
-        int degreeSimilarity = 0;
-        if (this.hashCode() == book.hashCode()) {
-            System.out.println("Книги равны по hashCode свойств объекта");
-            degreeSimilarity++;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (this.author.toString().equalsIgnoreCase(book.author.toString())) {
-            System.out.println("Книги равны по автору");
-            degreeSimilarity++;
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
         }
-        if (this.name.equalsIgnoreCase(book.name)) {
-            System.out.println("Книги равны по названию");
-            degreeSimilarity++;
-        }
-        if (this.year == book.year) {
-            System.out.println("Книги равны по году");
-            degreeSimilarity++;
-        }
-        System.out.printf("Уровени идентичности объекта: %s из 4-х%n",degreeSimilarity);
-        return degreeSimilarity == 4; // четверочка - это идентичные объекты
+        Book book = (Book) obj;
+        return this.year == book.year &&
+        Objects.equals(author, book.author) &&
+        Objects.equals(name, book.name);
     }
 
+    @Override
     public int hashCode() {
-        return Objects.hashCode(this.name + this.year + this.author.toString());
+        return Objects.hash(author, name, year);
     }
 
     private void bookExcept() {
